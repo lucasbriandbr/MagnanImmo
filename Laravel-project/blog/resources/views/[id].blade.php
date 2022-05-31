@@ -55,104 +55,104 @@
 
             <div class="flex w-full h-full overflow-hidden rounded-lg">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-lg">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                Product name
+                                Taille ( m² )
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Color
+                                Pièces
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Category
+                                Chambres
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Price
+                                étage
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Apple MacBook Pro 17"
                             </th>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Sliver
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Laptop
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 $2999
                             </td>
                         </tr>
                         <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Microsoft Surface Pro
                             </th>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 White
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Laptop PC
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 $1999
                             </td>
                         </tr>
                         <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Magic Mouse 2
                             </th>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Black
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Accessories
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 $99
                             </td>
                         </tr>
                         <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Google Pixel Phone
                             </th>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Gray
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Phone
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 $799
                             </td>
                         </tr>
                         <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Google Pixel Phone
                             </th>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Gray
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Phone
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 $799
                             </td>
                         </tr>
                         <tr class="dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Google Pixel Phone
                             </th>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Gray
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 Phone
                             </td>
-                            <td class="px-6 py-4">
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
                                 $799
                             </td>
                         </tr>
