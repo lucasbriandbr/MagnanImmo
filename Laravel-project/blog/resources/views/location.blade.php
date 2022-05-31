@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Accueil - Magnan Immo</title>
+        <title>Location - Magnan Immo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -34,34 +34,16 @@
                     Accueil
                 </a>
                 </li>
+                <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">Location</span>
+                </div>
+                </li>
             </ol>
         </nav>
 
-        <a class="flex flex-col items-center bg-white rounded-lg border cursor-default shadow-md md:flex-row dark:border-gray-700 dark:bg-gray-800">
-            <img class="object-cover w-full h-96 rounded-t-lg md:w-auto md:rounded-none md:rounded-l-lg" src="https://voyageursintrepides.com/wp-content/uploads/2020/06/shutterstock_386675959.jpg" alt="">
-            <div class="flex flex-col justify-between p-4 leading-normal">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Une agence près de vous</h5>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Le meilleur du quartier Magnan à Nice, et ce depuis 2011. Faites appel à nos experts et à leur connaissance aiguisée du marché pour profiter d’une estimation juste et au bon prix ! Votre projet immobilier est unique et précieux : chez Magnan Immobilier, on vous accompagne pour trouver LE bien idéal.</p>
-            </div>
-        </a>
-
         <div class="grid grid-cols-4 gap-[15px]">
-
-            <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <div class="flex rounded-lg h-[25vh] bg-cover bg-no-repeat bg-center bg-[url('https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg')]"></div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vente Nice Magnan</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Achat studio 1 pièce 34 m² Étage 3/3</p>
-                    <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        En savoir plus
-                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
 
             <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
@@ -72,38 +54,6 @@
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Location Nice Magnan</h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Location appartement 3 pièces 2 chambres 83 m² Étage 4/4</p>
-                    <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        En savoir plus
-                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <div class="flex rounded-lg h-[25vh] bg-cover bg-no-repeat bg-center bg-[url('https://v.seloger.com/s/height/800/visuels/1/s/q/m/1sqm5lggr0lr12mk541gzk2w2ttl783qqm5c0zubc.jpg')]"></div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vente Nice Magnan</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Achat studio 1 pièce 33,3 m² Étage 3/3</p>
-                    <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        En savoir plus
-                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <div class="flex rounded-lg h-[25vh] bg-cover bg-no-repeat bg-center bg-[url('https://v.seloger.com/s/width/800/visuels/0/8/0/z/080z1gb25s5qksjsuyf4jpo3bb32ok0tvevbxaxqs.jpg')]"></div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vente Nice Magnan</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Achat appartement meublé 2 pièces 1 chambre 61 m² Étage 6/7</p>
                     <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         En savoir plus
                         <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -129,22 +79,6 @@
 
             <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                    <div class="flex rounded-lg h-[25vh] bg-cover bg-no-repeat bg-center bg-[url('https://v.seloger.com/s/width/800/visuels/0/i/1/0/0i10dybak65n2c050itr18azfspsbxkpf59um4fj4.jpg')]"></div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vente Nice Magnan</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Achat appartement 3 pièces 2 chambres 87,05 m² Étage 0/4</p>
-                    <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        En savoir plus
-                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
                     <div class="flex rounded-lg h-[25vh] bg-cover bg-no-repeat bg-center bg-[url('https://v.seloger.com/s/width/800/visuels/1/m/6/8/1m686u1yr8swvuvnpdcpzai0liu1ba04ei9i3u9g5.jpg')]"></div>
                 </a>
                 <div class="p-5">
@@ -157,29 +91,6 @@
                         <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>
-            </div>
-
-            <div class="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-                <form class="space-y-6" action="../connexion">
-                    <h5 class="text-xl font-medium text-gray-900 dark:text-white">Se connecter</h5>
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
-                    </div>
-                    <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                                <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required>
-                            </div>
-                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Se souvenir de moi</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Connexion</button>
-                </form>
             </div>
 
         </div>
