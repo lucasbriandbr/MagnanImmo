@@ -29,57 +29,57 @@
             include("./Components/NavBar.php"); 
         ?>
 
-        <!-- <?php
+        <?php
 
-            function AddData() {
-
-                try {
-                    
-                    $dbmagnanimmo="magnanimmo";
-                    
-                    $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
-                
-                    $sql = "INSERT INTO `biens_immobiliers`(
-                        `id`, 
-                        `lien`, 
-                        `taille`, 
-                        `pieces`, 
-                        `chambres`, 
-                        `etage`, 
-                        `prix`, 
-                        `type`, 
-                        `description`) 
-                    VALUES (
-                        '',
-                        'https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg',
-                        34,
-                        1,
-                        0,
-                        '3/3',
-                        169000,
-                        1,
-                        'Belle opportunité à saisir. Grand F1 de 34 m2 au 3 ème et dernier étage d&apos;un bel immeuble récent et bien entretenu avec ascenseur. Vue Panoramique: verdure et aperçu mer. Le bien est en excellent état. Il se compose d&apos;une belle pièce à vivre donnant sur une terrasse de 8m2, exposition sud avec vue dégagée, une cuisine ouverte, une salle d&apos;eau, et toilettes séparées. Une cave complète ce bien. Parking collectif au sein de la copropriété. Possibilité de location d&apos;un parking également dans la copropriété.'
-                    )";
-                    
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
-                    $conn->beginTransaction();
-                    
-                    $conn->exec($sql);
-                
-                    $conn->commit();
-    
-                    echo "New records created successfully";
-                } catch(PDOException $e) {
-                    $conn->rollback();
-                    echo "Error: " . $e->getMessage();
-                }
-                
-                $conn = null;
-
+            if(isset($_GET["lien-image"])){
+                $_GET["lien-image"];
             }
 
-        ?> -->
+                // try {
+
+                //     $dbmagnanimmo="magnanimmo";
+                    
+                //     $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
+                
+                //     $sql = "INSERT INTO `biens_immobiliers`(
+                //         `id`, 
+                //         `lien`, 
+                //         `taille`, 
+                //         `pieces`, 
+                //         `chambres`, 
+                //         `etage`, 
+                //         `prix`, 
+                //         `type`, 
+                //         `description`) 
+                //     VALUES (
+                //         '',
+                //         'https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg',
+                //         34,
+                //         1,
+                //         0,
+                //         '3/3',
+                //         169000,
+                //         1,
+                //         'Belle opportunité à saisir. Grand F1 de 34 m2 au 3 ème et dernier étage d&apos;un bel immeuble récent et bien entretenu avec ascenseur. Vue Panoramique: verdure et aperçu mer. Le bien est en excellent état. Il se compose d&apos;une belle pièce à vivre donnant sur une terrasse de 8m2, exposition sud avec vue dégagée, une cuisine ouverte, une salle d&apos;eau, et toilettes séparées. Une cave complète ce bien. Parking collectif au sein de la copropriété. Possibilité de location d&apos;un parking également dans la copropriété.'
+                //     )";
+                    
+                //     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                //     $conn->beginTransaction();
+                    
+                //     $conn->exec($sql);
+                
+                //     $conn->commit();
+    
+                //     echo "New records created successfully";
+                // } catch(PDOException $e) {
+                //     $conn->rollback();
+                //     echo "Error: " . $e->getMessage();
+                // }
+                
+                // $conn = null;
+
+        ?>
 
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -110,27 +110,27 @@
                 <h5 class="text-2xl font-bold text-gray-900 dark:text-white">Ajouter un Bien Immobilier</h5>
             </div>
 
-            <div class="grid grid-cols-4 gap-[15px] py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 align-center justify-center">
+            <form action="../admin/ajouter-un-nouveau-bien" method="GET" class="grid grid-cols-4 gap-[15px] py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 align-center justify-center">
                 <div class="grid grid-cols-1  gap-[15px]">
-                    <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lien Image">
+                    <input name="lien-image" id="lien-image" type="text" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lien Image" required>
                 </div>
                 <div class="grid grid-cols-2 gap-[15px]">
                     <div class="grid grid-cols-1 gap-[15px]">
-                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Taille(m²)">
-                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pièces">
-                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Chambres">
+                        <input type="text" name="taille" id="taille" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Taille(m²)" required>
+                        <input type="text" name="pieces" id="pieces" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pièces" required>
+                        <input type="text" name="chambres" id="chambres" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Chambres" required>
                     </div>
                     <div class="grid grid-cols-1 gap-[15px]">
-                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Etage">
-                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Prix">
-                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type">
+                        <input type="text" name="etage" id="etage" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Etage" required>
+                        <input type="text" name="prix" id="prix" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Prix" required>
+                        <input type="text" name="type" id="type" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type" required>
                     </div>
                 </div>
-                <input type="textarea" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description">
+                <input type="textarea" name="description" id="description" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description" required>
                 <div class="grid grid-cols-1 gap-[15px]">
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none">Ajouter</button>
+                    <button onclick="addData()" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none">Ajouter</button>
                 </div>
-            </div>
+        </form>
 
         </div>
 
