@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Achat - Magnan Immo</title>
+        <title>Admin - Magnan Immo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,6 +22,7 @@
             }
         </style>
     </head>
+
     <body class="antialiased grid grid-cols-1 m-[15px] gap-[15px] bg-black">
 
         <?php 
@@ -29,58 +32,53 @@
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
-                <a href="./" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <a href="../" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
                     <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
                     Accueil
+                </a>
+                </li>
+                <li class="inline-flex items-center">
+                <a href="../admin" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    Admin
                 </a>
                 </li>
                 <li aria-current="page">
                 <div class="flex items-center">
                     <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">Achat</span>
+                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">Ajouter un nouveau Bien Immobilier</span>
                 </div>
                 </li>
             </ol>
         </nav>
 
-        <div class="grid grid-cols-4 gap-[15px]">
+        <div class="grid grid-cols-1 gap-[15px]">
+            
+            <div class="flex flex-col py-3 px-5 items-center align-center justify-center bg-white rounded-lg border shadow-md dark:border-gray-700 dark:bg-gray-800">
+                <h5 class="text-2xl font-bold text-gray-900 dark:text-white">Ajouter un Bien Immobilier</h5>
+            </div>
 
-            <?php
-                $dbmagnanimmo="magnanimmo";
-                
-                $pdo = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
-                
-                $sql = 'SELECT * FROM biens_immobiliers WHERE type=1';
-
-                $q = $pdo->query($sql);
-
-                $q->setFetchMode(PDO::FETCH_ASSOC);
-            ?>
-            <?php while ($row = $q->fetch()): ?>
-
-                <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="../biens/<?php echo htmlspecialchars($row['id']) ?>">
-                        <div class="flex rounded-lg h-[25vh] bg-cover bg-no-repeat bg-center bg-[url('<?php echo htmlspecialchars($row['lien']) ?>')]"></div>
-                    </a>
-                    <div class="p-5">
-                        <a href="../biens/<?php echo htmlspecialchars($row['id']) ?>">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?php echo ($row['type']==1)?'Vente':'Location' ?> Nice Magnan</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            <?php echo ($row['type']==1)?'Achat':'Location' ?> - 
-                            <?php echo htmlspecialchars($row['prix']) ?> € <?php echo ($row['type']==1)?'':'/ Mois' ?> - 
-                            <?php echo (($row['pieces']>1) ? strval($row['pieces'])." Pièces - " : strval($row['pieces'])." Pièce - ")?>
-                            <?php echo ($row['pieces']>1)?(($row['chambres']>1) ? strval($row['chambres'])." Chambres - " : strval($row['chambres'])." Chambre - "):''?>
-                            <?php echo htmlspecialchars($row['taille']) ?> m² - 
-                            Étage <?php echo htmlspecialchars($row['etage']) ?></p>
-                        <a href="../biens/<?php echo htmlspecialchars($row['id']) ?>" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            En savoir plus
-                            <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
+            <div class="grid grid-cols-4 gap-[15px] py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 align-center justify-center">
+                <div class="grid grid-cols-1  gap-[15px]">
+                    <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lien Image">
+                </div>
+                <div class="grid grid-cols-2 gap-[15px]">
+                    <div class="grid grid-cols-1 gap-[15px]">
+                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Taille(m²)">
+                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pièces">
+                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Chambres">
+                    </div>
+                    <div class="grid grid-cols-1 gap-[15px]">
+                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Etage">
+                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Prix">
+                        <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type">
                     </div>
                 </div>
-
-            <?php endwhile; ?>
+                <input type="textarea" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description">
+                <div class="grid grid-cols-1 gap-[15px]">
+                    <button type="button" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none">Ajouter</button>
+                </div>
+            </div>
 
         </div>
 
@@ -89,4 +87,5 @@
         ?>
 
     </body>
+
 </html>

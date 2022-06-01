@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+    <?php 
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+                $url = "https";
+            } else {
+                $url = "http"; 
+            }
+        $url .= "://"; 
+        $url .= $_SERVER['HTTP_HOST']; 
+        $url .= $_SERVER['REQUEST_URI']; 
+        $theBigId = intval(substr($url,strripos($url,'/')+1));
+    ?>
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>[id] - Magnan Immo</title>
+        <title>Bien n°<?php echo $theBigId?> - Magnan Immo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,10 +33,25 @@
             }
         </style>
     </head>
+
     <body class="antialiased grid grid-cols-1 m-[15px] gap-[15px] bg-black">
 
         <?php 
             include("./Components/NavBar.php");
+        ?>
+
+        <?php
+            $dbmagnanimmo="magnanimmo";
+            
+            $pdo = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
+            
+            $sql = "SELECT * FROM biens_immobiliers WHERE id=$theBigId";
+
+            $q = $pdo->query($sql);
+
+            $q->setFetchMode(PDO::FETCH_ASSOC);
+
+            $row = $q->fetch();
         ?>
 
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
@@ -43,7 +71,7 @@
                 <li aria-current="page">
                 <div class="flex items-center">
                     <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">[id]</span>
+                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">Bien n°<?php echo $theBigId?></span>
                 </div>
                 </li>
             </ol>
@@ -51,18 +79,15 @@
 
         <a class="grid grid-cols-2 gap-[15px]">
 
-            <img class="object-cover w-full rounded-lg md:w-auto" src="https://v.seloger.com/s/width/800/visuels/1/s/j/5/1sj585uxtxb70oyg3qb3dgdi2ez08itxh7jo1xtuf.jpg" alt="">
+            <img class="object-cover w-full rounded-lg md:w-auto" src="<?php echo $row["lien"]?>" alt="">
 
             <div class="grid grid-cols-1 gap-[15px]">
 
                 <div class="flex flex-col align-center justify-center flex-1 py-3 px-5 h-full bg-gray-50 text-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
 
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Location Nice Magnan</h5><br/>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?php echo ($row['type']==1)?'Vente':'Location' ?> Nice Magnan</h5><br/>
 
-                    <p>Profitez de cette superbe Location dans le quartier de Nice Magnan ! Ses nombreux avantages de proximité des commerces et transports vous raviront les yeux et les oreilles ! De plus, vous pourrez y trouver des parcs animaliers etc...<br/>
-                    <br/>Profitez de cette superbe Location dans le quartier de Nice Magnan !<br/>
-                    <br/>Ses nombreux avantages de proximité des commerces et transports vous raviront les yeux et les oreilles !<br/>
-                    <br/>De plus, vous pourrez y trouver des parcs animaliers etc...</p>
+                    <?php echo $row['description']?>
 
                 </div>
                 
@@ -93,22 +118,22 @@
                         <tbody>
                             <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700 rounded-lg">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    42.39
+                                    <?php echo htmlspecialchars($row['taille']) ?>
                                 </th>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    2
+                                    <?php echo $row['pieces'] ?>
                                 </td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    1
+                                    <?php echo $row['chambres']?>
                                 </td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    0/5
+                                    <?php echo htmlspecialchars($row['etage']) ?></p>
                                 </td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    Location
+                                    <?php echo ($row['type']==1)?'Achat':'Location' ?>
                                 </td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    750 €
+                                    <?php echo htmlspecialchars($row['prix']) ?> € <?php echo ($row['type']==1)?'':'/ Mois' ?>
                                 </td>
                             </tr>
                         </tbody>

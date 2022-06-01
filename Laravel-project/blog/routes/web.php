@@ -29,12 +29,20 @@ Route::get('/biens', function () {
     return view('biens');
 });
 
-Route::get('/biens/[id]', function () {
+Route::get('/biens/{id}', function () {
     return view('[id]');
 });
 
 Route::get('/connexion', function () {
     return view('connexion');
+});
+
+Route::get('/admin/ajouter-un-nouveau-bien', function () {
+    return view('admin-ajout');
+});
+
+Route::get('/admin/{id}', function () {
+    return view('[id]-admin');
 });
 
 Route::get('/admin', function () {
