@@ -31,48 +31,54 @@
 
         <!-- <?php
 
-            try {
-                $dbmagnanimmo="magnanimmo";
-                
-                $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
-            
-                $sql = "INSERT INTO `biens_immobiliers`(
-                    `id`, 
-                    `lien`, 
-                    `taille`, 
-                    `pieces`, 
-                    `chambres`, 
-                    `etage`, 
-                    `prix`, 
-                    `type`, 
-                    `description`) 
-                VALUES (
-                    '',
-                    'https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg',
-                    34,
-                    1,
-                    0,
-                    '3/3',
-                    169000,
-                    1,
-                    'Belle opportunité à saisir. Grand F1 de 34 m2 au 3 ème et dernier étage d&apos;un bel immeuble récent et bien entretenu avec ascenseur. Vue Panoramique: verdure et aperçu mer. Le bien est en excellent état. Il se compose d&apos;une belle pièce à vivre donnant sur une terrasse de 8m2, exposition sud avec vue dégagée, une cuisine ouverte, une salle d&apos;eau, et toilettes séparées. Une cave complète ce bien. Parking collectif au sein de la copropriété. Possibilité de location d&apos;un parking également dans la copropriété.'
-                )";
-                
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-                $conn->beginTransaction();
-                
-                $conn->exec($sql);
-            
-                $conn->commit();
+            function AddData() {
 
-                echo "New records created successfully";
-            } catch(PDOException $e) {
-                $conn->rollback();
-                echo "Error: " . $e->getMessage();
+                try {
+                    
+                    $dbmagnanimmo="magnanimmo";
+                    
+                    $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
+                
+                    $sql = "INSERT INTO `biens_immobiliers`(
+                        `id`, 
+                        `lien`, 
+                        `taille`, 
+                        `pieces`, 
+                        `chambres`, 
+                        `etage`, 
+                        `prix`, 
+                        `type`, 
+                        `description`) 
+                    VALUES (
+                        '',
+                        'https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg',
+                        34,
+                        1,
+                        0,
+                        '3/3',
+                        169000,
+                        1,
+                        'Belle opportunité à saisir. Grand F1 de 34 m2 au 3 ème et dernier étage d&apos;un bel immeuble récent et bien entretenu avec ascenseur. Vue Panoramique: verdure et aperçu mer. Le bien est en excellent état. Il se compose d&apos;une belle pièce à vivre donnant sur une terrasse de 8m2, exposition sud avec vue dégagée, une cuisine ouverte, une salle d&apos;eau, et toilettes séparées. Une cave complète ce bien. Parking collectif au sein de la copropriété. Possibilité de location d&apos;un parking également dans la copropriété.'
+                    )";
+                    
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                    $conn->beginTransaction();
+                    
+                    $conn->exec($sql);
+                
+                    $conn->commit();
+    
+                    echo "New records created successfully";
+                } catch(PDOException $e) {
+                    $conn->rollback();
+                    echo "Error: " . $e->getMessage();
+                }
+                
+                $conn = null;
+
             }
-            
-            $conn = null;
+
         ?> -->
 
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
@@ -122,7 +128,7 @@
                 </div>
                 <input type="textarea" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description">
                 <div class="grid grid-cols-1 gap-[15px]">
-                    <button type="button" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none">Ajouter</button>
+                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none">Ajouter</button>
                 </div>
             </div>
 
