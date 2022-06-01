@@ -21,6 +21,9 @@
                     <li class="mb-4">
                         <a href="../" class="hover:underline">Magnan Immo</a>
                     </li>
+                    <li class="mb-4">
+                        <a href="../admin" class="hover:underline">Admin</a>
+                    </li>
                 </ul>
             </div>
             <div>

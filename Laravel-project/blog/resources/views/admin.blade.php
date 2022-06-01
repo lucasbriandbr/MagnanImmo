@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>[id] - Magnan Immo</title>
+        <title>Admin - Magnan Immo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,108 +22,49 @@
             }
         </style>
     </head>
+
     <body class="antialiased grid grid-cols-1 m-[15px] gap-[15px] bg-black">
 
         <?php 
-            include("./Components/NavBar.php");
+            include("./Components/NavBar.php"); 
         ?>
 
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
-                <a href="../" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <a href="./" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
                     <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
                     Accueil
-                </a>
-                </li>
-                <li class="inline-flex items-center">
-                <a href="../biens" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    Biens
                 </a>
                 </li>
                 <li aria-current="page">
                 <div class="flex items-center">
                     <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">[id]</span>
+                    <span class="ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500">Admin</span>
                 </div>
                 </li>
             </ol>
         </nav>
 
-        <a class="grid grid-cols-2 gap-[15px]">
-
-            <img class="object-cover w-full rounded-lg md:w-auto" src="https://v.seloger.com/s/width/800/visuels/1/s/j/5/1sj585uxtxb70oyg3qb3dgdi2ez08itxh7jo1xtuf.jpg" alt="">
-
-            <div class="grid grid-cols-1 gap-[15px]">
-
-                <div class="flex flex-col align-center justify-center flex-1 py-3 px-5 h-full bg-gray-50 text-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Location Nice Magnan</h5><br/>
-
-                    <p>Profitez de cette superbe Location dans le quartier de Nice Magnan ! Ses nombreux avantages de proximité des commerces et transports vous raviront les yeux et les oreilles ! De plus, vous pourrez y trouver des parcs animaliers etc...<br/>
-                    <br/>Profitez de cette superbe Location dans le quartier de Nice Magnan !<br/>
-                    <br/>Ses nombreux avantages de proximité des commerces et transports vous raviront les yeux et les oreilles !<br/>
-                    <br/>De plus, vous pourrez y trouver des parcs animaliers etc...</p>
-
-                </div>
-                
-                <div class="flex w-full rounded-lg overflow-hidden">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-lg">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    Taille ( m² )
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Pièces
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Chambres
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    étage
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Type
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Prix
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700 rounded-lg">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    42.39
-                                </th>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    2
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    1
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    0/5
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    Location
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap text-center">
-                                    750 €
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
+        <div class="grid grid-cols-1 gap-[15px]">
+            
+            <div class="flex flex-col py-3 px-5 items-center align-center justify-center bg-white rounded-lg border shadow-md dark:border-gray-700 dark:bg-gray-800">
+                <h5 class="text-2xl font-bold text-gray-900 dark:text-white">Gérer les biens Immobiliers</h5>
             </div>
 
-        </a>
+            <div class="grid grid-cols-4 gap-[15px] py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 align-center justify-center">
+                <div></div>
+                <div></div>
+                <button type="button" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none">Valider</button>
+                <button type="button" class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none">Supprimer</button>
+            </div>
+
+        </div>
 
         <?php 
             include("./Components/Footer.php");
         ?>
 
     </body>
+
 </html>
