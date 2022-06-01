@@ -29,6 +29,52 @@
             include("./Components/NavBar.php"); 
         ?>
 
+        <!-- <?php
+
+            try {
+                $dbmagnanimmo="magnanimmo";
+                
+                $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
+            
+                $sql = "INSERT INTO `biens_immobiliers`(
+                    `id`, 
+                    `lien`, 
+                    `taille`, 
+                    `pieces`, 
+                    `chambres`, 
+                    `etage`, 
+                    `prix`, 
+                    `type`, 
+                    `description`) 
+                VALUES (
+                    '',
+                    'https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg',
+                    34,
+                    1,
+                    0,
+                    '3/3',
+                    169000,
+                    1,
+                    'Belle opportunité à saisir. Grand F1 de 34 m2 au 3 ème et dernier étage d&apos;un bel immeuble récent et bien entretenu avec ascenseur. Vue Panoramique: verdure et aperçu mer. Le bien est en excellent état. Il se compose d&apos;une belle pièce à vivre donnant sur une terrasse de 8m2, exposition sud avec vue dégagée, une cuisine ouverte, une salle d&apos;eau, et toilettes séparées. Une cave complète ce bien. Parking collectif au sein de la copropriété. Possibilité de location d&apos;un parking également dans la copropriété.'
+                )";
+                
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+                $conn->beginTransaction();
+                
+                $conn->exec($sql);
+            
+                $conn->commit();
+
+                echo "New records created successfully";
+            } catch(PDOException $e) {
+                $conn->rollback();
+                echo "Error: " . $e->getMessage();
+            }
+            
+            $conn = null;
+        ?> -->
+
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
