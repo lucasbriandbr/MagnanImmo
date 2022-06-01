@@ -31,53 +31,61 @@
 
         <?php
 
-            if(isset($_GET["lien-image"])){
-                $_GET["lien-image"];
-            }
+            if(isset($_GET["lien-image"])&&isset($_GET["taille"])&&isset($_GET["pieces"])&&isset($_GET["chambres"])&&isset($_GET["etage"])&&isset($_GET["prix"])&&isset($_GET["type"])&&isset($_GET["description"])){
+                $lien = $_GET["lien-image"];
+                $taille = $_GET["taille"];
+                $pieces = $_GET["pieces"];
+                $chambres = $_GET["chambres"];
+                $etage = $_GET["etage"];
+                $prix = $_GET["prix"];
+                $type = $_GET["type"];
+                $description = $_GET["description"];
 
-                // try {
+                try {
 
-                //     $dbmagnanimmo="magnanimmo";
+                    $dbmagnanimmo="magnanimmo";
                     
-                //     $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
+                    $conn = new PDO("mysql:host=localhost;dbname=$dbmagnanimmo", "root", "");
                 
-                //     $sql = "INSERT INTO `biens_immobiliers`(
-                //         `id`, 
-                //         `lien`, 
-                //         `taille`, 
-                //         `pieces`, 
-                //         `chambres`, 
-                //         `etage`, 
-                //         `prix`, 
-                //         `type`, 
-                //         `description`) 
-                //     VALUES (
-                //         '',
-                //         'https://v.seloger.com/s/width/800/visuels/0/6/x/4/06x4tnzs1ezxppb1ai2tq6acwev3irp0idja9g6bk.jpg',
-                //         34,
-                //         1,
-                //         0,
-                //         '3/3',
-                //         169000,
-                //         1,
-                //         'Belle opportunité à saisir. Grand F1 de 34 m2 au 3 ème et dernier étage d&apos;un bel immeuble récent et bien entretenu avec ascenseur. Vue Panoramique: verdure et aperçu mer. Le bien est en excellent état. Il se compose d&apos;une belle pièce à vivre donnant sur une terrasse de 8m2, exposition sud avec vue dégagée, une cuisine ouverte, une salle d&apos;eau, et toilettes séparées. Une cave complète ce bien. Parking collectif au sein de la copropriété. Possibilité de location d&apos;un parking également dans la copropriété.'
-                //     )";
+                    $sql = "INSERT INTO `biens_immobiliers`(
+                        `id`,
+                        `lien`, 
+                        `taille`, 
+                        `pieces`, 
+                        `chambres`, 
+                        `etage`, 
+                        `prix`, 
+                        `type`, 
+                        `description`) 
+                    VALUES (
+                        '',
+                        $lien,
+                        $taille,
+                        $pieces,
+                        $chambres,
+                        $etage,
+                        $prix,
+                        $type,
+                        $description
+                    )";
                     
-                //     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 
-                //     $conn->beginTransaction();
+                    $conn->beginTransaction();
                     
-                //     $conn->exec($sql);
+                    $conn->exec($sql);
                 
-                //     $conn->commit();
+                    $conn->commit();
     
-                //     echo "New records created successfully";
-                // } catch(PDOException $e) {
-                //     $conn->rollback();
-                //     echo "Error: " . $e->getMessage();
-                // }
+                    echo "New records created successfully";
+                } catch(PDOException $e) {
+                    $conn->rollback();
+                    echo "<p class='bg-white'>Error: " . $e->getMessage()."</p>";
+                }
                 
-                // $conn = null;
+                $conn = null;
+
+            }
 
         ?>
 
